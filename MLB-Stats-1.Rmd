@@ -1,5 +1,5 @@
 ---
-title: "MLB-Stats-1"
+title: "MLB Statistics"
 author: "Michael Calabro"
 date: "9-30-2018"
 output: html_document
@@ -13,6 +13,22 @@ library(Lahman)
 library(readxl)
 ```
 ```{r}
-
+Lahman_Batting_2017 <- read_excel("~/Downloads/Lahman_Batting_2017.xlsx")
+B <- Lahman_Batting_2017
+B
+```
+```{r}
+Lahman_Pitching_2017 <- read_excel("~/Downloads/Lahman_Pitching_2017.xlsx")
+P <- Lahman_Pitching_2017
+P
+```
+```{r}
+B %>%
+  filter(yearID == 2017) %>%
+  mutate(AVG = H / AB) %>%
+  filter(!is.na(AVG)) %>%
+  filter(AB > 300) %>%
+  select(playerID, AB, H, HR, SO, AVG) %>%
+  arrange(desc(AVG))
 ```
 
