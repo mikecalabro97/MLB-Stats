@@ -128,6 +128,8 @@ $(document).ready(function () {
 </div>
 
 
+<div id="a-peek-at-the-batting-data" class="section level2">
+<h2>A peek at the batting data</h2>
 <pre class="r"><code>Lahman_Batting_2017 &lt;- read_excel(&quot;~/Downloads/Lahman_Batting_2017.xlsx&quot;)
 B &lt;- Lahman_Batting_2017
 B</code></pre>
@@ -147,6 +149,9 @@ B</code></pre>
 ## # ... with 104,314 more rows, and 11 more variables: HR &lt;dbl&gt;, RBI &lt;dbl&gt;,
 ## #   SB &lt;dbl&gt;, CS &lt;dbl&gt;, BB &lt;dbl&gt;, SO &lt;dbl&gt;, IBB &lt;lgl&gt;, HBP &lt;lgl&gt;,
 ## #   SH &lt;lgl&gt;, SF &lt;lgl&gt;, GIDP &lt;dbl&gt;</code></pre>
+</div>
+<div id="a-peek-at-the-pitching-data" class="section level2">
+<h2>A peek at the pitching data</h2>
 <pre class="r"><code>Lahman_Pitching_2017 &lt;- read_excel(&quot;~/Downloads/Lahman_Pitching_2017.xlsx&quot;)
 P &lt;- Lahman_Pitching_2017
 P</code></pre>
@@ -167,6 +172,9 @@ P</code></pre>
 ## #   IPouts &lt;dbl&gt;, H &lt;dbl&gt;, ER &lt;dbl&gt;, HR &lt;dbl&gt;, BB &lt;dbl&gt;, SO &lt;dbl&gt;,
 ## #   BAOpp &lt;lgl&gt;, ERA &lt;dbl&gt;, IBB &lt;lgl&gt;, WP &lt;dbl&gt;, HBP &lt;dbl&gt;, BK &lt;dbl&gt;,
 ## #   BFP &lt;dbl&gt;, GF &lt;dbl&gt;, R &lt;dbl&gt;, SH &lt;lgl&gt;, SF &lt;lgl&gt;, GIDP &lt;lgl&gt;</code></pre>
+</div>
+<div id="a-graph" class="section level2">
+<h2>A graph</h2>
 <pre class="r"><code>B %&gt;%
   filter(yearID == 2017) %&gt;%
   mutate(AVG = H / AB) %&gt;%
@@ -188,6 +196,7 @@ P</code></pre>
 ##  9 hosmeer01   603   192    25   104 0.318
 ## 10 ramirjo01   585   186    29    69 0.318
 ## # ... with 238 more rows</code></pre>
+</div>
 
 
 

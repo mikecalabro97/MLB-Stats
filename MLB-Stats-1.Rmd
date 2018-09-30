@@ -12,16 +12,22 @@ library(devtools)
 library(Lahman)
 library(readxl)
 ```
+
+##A peek at the batting data
 ```{r}
 Lahman_Batting_2017 <- read_excel("~/Downloads/Lahman_Batting_2017.xlsx")
 B <- Lahman_Batting_2017
 B
 ```
+
+##A peek at the pitching data
 ```{r}
 Lahman_Pitching_2017 <- read_excel("~/Downloads/Lahman_Pitching_2017.xlsx")
 P <- Lahman_Pitching_2017
 P
 ```
+
+##A graph
 ```{r}
 B %>%
   filter(yearID == 2017) %>%
@@ -31,4 +37,5 @@ B %>%
   select(playerID, AB, H, HR, SO, AVG) %>%
   arrange(desc(AVG))
 ```
+
 
